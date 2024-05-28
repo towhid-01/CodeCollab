@@ -83,26 +83,21 @@ const Output = ({ editorRef, language }) => {
                 >
                     Run Code
                 </Button>
-                {language === "cpp" ? (
-                    <CppRunner editorRef={editorRef} />
-                ) : (
-                  <Box
-                  flex="1"
-                  p={2}
-                  color={isError ? "red.400" : output ? "green.400" : "gray.400"}
-                  border="1px solid"
-                  borderRadius={4}
-                  borderColor={isError ? "red.500" : "#333"}
-                  overflowY="auto"
-                  height="90%"
-                  w="100%"
+                <Box
+                    flex="1"
+                    p={2}
+                    color={isError ? "red.400" : output ? "green.400" : "gray.400"}
+                    border="1px solid"
+                    borderRadius={4}
+                    borderColor={isError ? "red.500" : "#333"}
+                    overflowY="auto"
+                    height="90%"
+                    w="100%"
                 >
-                  {output
-                      ? output.map((line, i) => <Text color={isError ? "red.400" : "green.400"} key={i}>{line}</Text>)
-                      : <Text color="gray.400">Click "Run Code" to see the output here</Text>}
+                    {output
+                        ? output.map((line, i) => <Text color={isError ? "red.400" : "green.400"} key={i}>{line}</Text>)
+                        : <Text color="gray.400">Click "Run Code" to see the output here</Text>}
                 </Box>
-              
-                )}
             </Box>
         </Box>
     );
